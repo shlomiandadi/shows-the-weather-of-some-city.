@@ -1,0 +1,11 @@
+.divF{
+    display: flex;
+    justify-content: right;
+    margin-top: 1px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}

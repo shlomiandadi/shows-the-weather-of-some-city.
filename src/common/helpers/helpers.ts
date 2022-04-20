@@ -1,0 +1,1 @@
+export const fahrenheitToCelsius = (temperature: number) =>  Math.round((temperature - 32) * 5 / 9)
