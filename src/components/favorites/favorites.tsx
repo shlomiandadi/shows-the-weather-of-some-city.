@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAppSelector } from '../../redux/hooks'
 import "./favorites.css";
 import axios from 'axios';
-import WeatherFavorite from '../CurrentWeather/weatherFavorite';
+import WeatherFavorite from './weatherFavorite';
 
 const dictatory_ar: any = []
 
