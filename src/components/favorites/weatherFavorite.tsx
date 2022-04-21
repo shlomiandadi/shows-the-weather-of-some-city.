@@ -19,7 +19,7 @@ const WeatherFavorite = (props: any) => {
   return (
     <React.Fragment>
       {item.Temperature ?
-        <div className='col-3 border divC text-center bg-light shadow ms-2 div-card card-Favorites'>
+        <div className='col-3 border divC text-center bg-light shadow ms-2 div-card'>
           <div>
             <img src={`https://developer.accuweather.com/sites/default/files/${String(item.Day.Icon).padStart(2, "0")}-s.png`} width="90" />
           </div>

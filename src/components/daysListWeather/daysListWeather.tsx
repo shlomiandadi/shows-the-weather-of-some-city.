@@ -9,15 +9,15 @@ const DaysListWeather = (props: any): JSX.Element => {
   let location: any = props.location
   // Todo: check how to add with interface
   return (
-    <div>
+    <div >
       <h2 className='text-center my-3'>Daily weather of {location}</h2>
-      <div className='row justify-content-around '>
+      <div className='row justify-content-around days-list'>
         {weathersArr.map((item: any) => {
           let dt = new Date(item.Date);
           let day = days_ar[dt.getDay()]
           const cTemp = fahrenheitToCelsius(item.Temperature.Maximum.Value)
           return (
-            <div key={item.Date} className='text-center col-xl-2 col-md-4 p-2 border bg-light shadow div-card'>
+            <div key={item.Date} className='text-center  col-xl-2 col-md-4 p-2 border bg-light shadow div-card'>
               <h3>{day}</h3>
               <h4>{cTemp} °C</h4>
               <img src={`https://developer.accuweather.com/sites/default/files/${String(item.Day.Icon).padStart(2, "0")}-s.png`} alt="icon" width="90" />
