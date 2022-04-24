@@ -24,13 +24,13 @@ const Favorites = () => {
         <div className='container'>
             <h3>Favorites</h3>
             <div className='row justify-content-around m'>
-                {locations_ar.map((item: any) => { 
+                {locations_ar.map((item: any, index) => {
                     let url = item.config.url;
                     let indexOfQ = url.indexOf("?");
                     let indexOfSlash = url.indexOf("day/");
                     let locCode = url.substring(indexOfSlash + 4, indexOfQ);
                     return (
-                        <WeatherFavorite key={item.name} location={dictatory_ar[locCode]} item={item.data.DailyForecasts[0]} codeTown={locCode} />
+                        <WeatherFavorite key={index} location={dictatory_ar[locCode]} item={item.data.DailyForecasts[0]} codeTown={locCode} />
                     )
                 })}
             </div>
