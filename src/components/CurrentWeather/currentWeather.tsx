@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { fahrenheitToCelsius } from '../../common/helpers/helpers';
+import { isCelsiusContext } from '../../contexts/unitContext';
 import { DaliyWeather } from '../../models/daliyweather';
 import "../CurrentWeather/currentWeather.css";
+
 const CurrentWeather = (props: any) => {
   let item: DaliyWeather = props.item;
   let location: string = props.location;
-  const temperature = props.item.Temperature && fahrenheitToCelsius(props.item.Temperature.Maximum.Value)
+  const isCelsius = useContext(isCelsiusContext)
+
+  const temperature = props.item.Temperature 
+    ? isCelsius 
+      ? fahrenheitToCelsius(props.item.Temperature.Maximum.Value)
+      : props.item.Temperature.Maximum.Value
+    : ''
 
   return (
     <React.Fragment>
@@ -15,7 +23,7 @@ const CurrentWeather = (props: any) => {
             <img src={`https://developer.accuweather.com/sites/default/files/${String(item.Day.Icon).padStart(2, "0")}-s.png`} width="90" />
           </div>
           <h2>{location}</h2>
-          <h3>{temperature}°C</h3>
+          <h3>{temperature}°{isCelsius ? 'C': 'F'}</h3>
         </div> : <h2>Loading...</h2>}
     </React.Fragment>
   )
