@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "./header.css";
 
-const Header = () => {
+
+const Header = ({ isCelsius, setIsCelsius }: any) => {
+
   return (
     <div className='header-app container-fluid'>
       <div className="container">
@@ -12,9 +14,11 @@ const Header = () => {
             <Link to='/'>Home | </Link>
             <Link to='/Favorites'>Favorites</Link>
           </nav>
+          <button className='btn-unit' onClick={() => setIsCelsius(!isCelsius)}>Replace Unit C° to F° </button>
         </div>
       </div>
     </div>
   )
 }
+
 export default Header

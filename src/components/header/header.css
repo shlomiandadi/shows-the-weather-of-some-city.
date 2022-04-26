@@ -16,3 +16,21 @@
 .header-app a:hover{
     color: #e8c122;
 }
+
+.btn-unit{
+    width: 20%;
+    background-color: #e8c122;
+    color: rgb(0, 0, 0);
+    padding: 1%;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+ }
+
+ @media screen and (max-width: 600px) {
+ 
+    .btn-unit{
+        width: 40%;
+    }
+     
+ }
